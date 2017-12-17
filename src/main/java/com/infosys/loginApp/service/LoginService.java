@@ -278,8 +278,10 @@ public class LoginService {
 		
 		ProjectLogger.log("User created successfully.....");
 	    //response.put(JsonKey.ACCESSTOKEN, accessToken);
-
-		return false;
+		
+		Set<String> keySet = userMap.keySet();
+		
+		getUserProfile((String)userMap.get(JsonKey.ID));
 	}
 	
 	private void getUserProfile(String userId) {
